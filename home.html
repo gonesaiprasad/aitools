@@ -91,74 +91,6 @@
             background-color: #5a08a0;
         }
 
-        .btn-accent {
-            background-color: var(--accent);
-        }
-
-        .btn-accent:hover {
-            background-color: #e11574;
-        }
-
-        .edit-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 10px 15px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: var(--shadow);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .editable {
-            position: relative;
-        }
-
-        .editable::after {
-            content: '✏️';
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .edit-mode .editable::after {
-            opacity: 1;
-        }
-
-        .edit-input {
-            width: 100%;
-            padding: 8px 12px;
-            border: 2px solid var(--primary);
-            border-radius: 4px;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .edit-label {
-            font-size: 12px;
-            color: var(--gray);
-            margin-bottom: 10px;
-            display: block;
-        }
-
         /* Header Styles */
         header {
             background-color: white;
@@ -571,13 +503,6 @@
                 width: 100%;
                 max-width: 250px;
             }
-
-            .edit-mode-toggle {
-                top: 10px;
-                right: 10px;
-                padding: 8px 12px;
-                font-size: 0.9rem;
-            }
         }
 
         @media (max-width: 576px) {
@@ -604,33 +529,28 @@
     </style>
 </head>
 <body>
-    <!-- Edit Mode Toggle -->
-    <button class="edit-mode-toggle" id="edit-mode-toggle">
-        <i class="fas fa-edit"></i> Edit Mode
-    </button>
-
     <!-- Header -->
     <header>
         <div class="container">
             <div class="header-container">
                 <a href="#" class="logo">
                     <i class="fas fa-toolbox"></i>
-                    <span class="editable" data-content="logo-text">ToolKit Pro</span>
+                    ToolKit Pro
                 </a>
                 
                 <nav>
                     <ul>
-                        <li><a href="#" class="editable" data-content="nav-home">Home</a></li>
-                        <li><a href="image-tools.html" class="editable" data-content="nav-image">Image Tools</a></li>
-                        <li><a href="pdf-tools.html" class="editable" data-content="nav-pdf">PDF Tools</a></li>
-                        <li><a href="#features" class="editable" data-content="nav-features">Features</a></li>
-                        <li><a href="#pricing" class="editable" data-content="nav-pricing">Pricing</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="image-tools.html">Image Tools</a></li>
+                        <li><a href="pdf-tools.html">PDF Tools</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
                     </ul>
                 </nav>
                 
                 <div class="auth-buttons">
-                    <a href="#" class="btn editable" data-content="auth-signin">Sign In</a>
-                    <a href="#" class="btn btn-secondary editable" data-content="auth-signup">Sign Up</a>
+                    <a href="#" class="btn">Sign In</a>
+                    <a href="#" class="btn btn-secondary">Sign Up</a>
                 </div>
                 
                 <button class="mobile-menu-btn">
@@ -645,11 +565,11 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="editable" data-content="hero-title">All Your Image & PDF Tools in One Place</h1>
-                    <p class="editable" data-content="hero-subtitle">Transform, optimize, and manage your files with our powerful online toolkit. No installation required - work directly in your browser.</p>
+                    <h1>All Your Image & PDF Tools in One Place</h1>
+                    <p>Transform, optimize, and manage your files with our powerful online toolkit. No installation required - work directly in your browser.</p>
                     <div class="hero-buttons">
-                        <a href="image-tools.html" class="btn editable" data-content="hero-btn1">Explore Image Tools</a>
-                        <a href="pdf-tools.html" class="btn btn-secondary editable" data-content="hero-btn2">Try PDF Tools</a>
+                        <a href="image-tools.html" class="btn">Explore Image Tools</a>
+                        <a href="pdf-tools.html" class="btn btn-secondary">Try PDF Tools</a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -663,8 +583,8 @@
     <section class="popular-tools">
         <div class="container">
             <div class="section-header">
-                <h2 class="editable" data-content="tools-title">Most Popular Tools</h2>
-                <p class="editable" data-content="tools-subtitle">Discover our most used tools for image and PDF processing</p>
+                <h2>Most Popular Tools</h2>
+                <p>Discover our most used tools for image and PDF processing</p>
             </div>
             
             <div class="tools-grid">
@@ -672,64 +592,54 @@
                     <div class="tool-icon">
                         <i class="fas fa-compress-arrows-alt"></i>
                     </div>
-                    <h3 class="editable" data-content="tool1-title">Image Compressor</h3>
-                    <p class="editable" data-content="tool1-desc">Reduce image file size without losing quality</p>
-                    <a href="image-compressor.html" class="btn editable" data-content="tool1-btn">Use Tool</a>
+                    <h3>Image Compressor</h3>
+                    <p>Reduce image file size without losing quality</p>
+                    <a href="image-compressor.html" class="btn">Use Tool</a>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <h3 class="editable" data-content="tool2-title">PDF to Word</h3>
-                    <p class="editable" data-content="tool2-desc">Convert PDF documents to editable Word files</p>
-                    <a href="pdf-to-word.html" class="btn editable" data-content="tool2-btn">Use Tool</a>
+                    <h3>PDF to Word</h3>
+                    <p>Convert PDF documents to editable Word files</p>
+                    <a href="pdf-to-word.html" class="btn">Use Tool</a>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i class="fas fa-crop-alt"></i>
                     </div>
-                    <h3 class="editable" data-content="tool3-title">Image Cropper</h3>
-                    <p class="editable" data-content="tool3-desc">Crop and resize images to your desired dimensions</p>
-                    <a href="image-cropper.html" class="btn editable" data-content="tool3-btn">Use Tool</a>
+                    <h3>Image Cropper</h3>
+                    <p>Crop and resize images to your desired dimensions</p>
+                    <a href="image-cropper.html" class="btn">Use Tool</a>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i class="fas fa-file-merge"></i>
                     </div>
-                    <h3 class="editable" data-content="tool4-title">PDF Merger</h3>
-                    <p class="editable" data-content="tool4-desc">Combine multiple PDF files into a single document</p>
-                    <a href="pdf-merger.html" class="btn editable" data-content="tool4-btn">Use Tool</a>
+                    <h3>PDF Merger</h3>
+                    <p>Combine multiple PDF files into a single document</p>
+                    <a href="pdf-merger.html" class="btn">Use Tool</a>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i class="fas fa-file-image"></i>
                     </div>
-                    <h3 class="editable" data-content="tool5-title">Image Converter</h3>
-                    <p class="editable" data-content="tool5-desc">Convert images between JPG, PNG, WebP and more</p>
-                    <a href="image-converter.html" class="btn editable" data-content="tool5-btn">Use Tool</a>
+                    <h3>Image Converter</h3>
+                    <p>Convert images between JPG, PNG, WebP and more</p>
+                    <a href="image-converter.html" class="btn">Use Tool</a>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i class="fas fa-file-export"></i>
                     </div>
-                    <h3 class="editable" data-content="tool6-title">PDF Compressor</h3>
-                    <p class="editable" data-content="tool6-desc">Reduce PDF file size while maintaining quality</p>
-                    <a href="pdf-compressor.html" class="btn editable" data-content="tool6-btn">Use Tool</a>
-                </div>
-                
-                <!-- New Image to PDF Converter Card -->
-                <div class="tool-card">
-                    <div class="tool-icon">
-                        <i class="fas fa-images"></i>
-                    </div>
-                    <h3 class="editable" data-content="tool7-title">Image to PDF</h3>
-                    <p class="editable" data-content="tool7-desc">Convert multiple images to a single PDF document</p>
-                    <a href="image-to-pdf.html" class="btn btn-accent editable" data-content="tool7-btn">Use Tool</a>
+                    <h3>PDF Compressor</h3>
+                    <p>Reduce PDF file size while maintaining quality</p>
+                    <a href="pdf-compressor.html" class="btn">Use Tool</a>
                 </div>
             </div>
         </div>
@@ -739,8 +649,8 @@
     <section class="categories">
         <div class="container">
             <div class="section-header">
-                <h2 class="editable" data-content="categories-title">Tool Categories</h2>
-                <p class="editable" data-content="categories-subtitle">Browse tools by category to find exactly what you need</p>
+                <h2>Tool Categories</h2>
+                <p>Browse tools by category to find exactly what you need</p>
             </div>
             
             <div class="categories-grid">
@@ -748,36 +658,36 @@
                     <div class="category-icon">
                         <i class="fas fa-image"></i>
                     </div>
-                    <h3 class="editable" data-content="cat1-title">Image Tools</h3>
-                    <p class="editable" data-content="cat1-desc">Compress, convert, edit and optimize your images</p>
-                    <a href="image-tools.html" class="btn editable" data-content="cat1-btn">View All</a>
+                    <h3>Image Tools</h3>
+                    <p>Compress, convert, edit and optimize your images</p>
+                    <a href="image-tools.html" class="btn">View All</a>
                 </div>
                 
                 <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <h3 class="editable" data-content="cat2-title">PDF Tools</h3>
-                    <p class="editable" data-content="cat2-desc">Merge, split, convert and edit PDF documents</p>
-                    <a href="pdf-tools.html" class="btn editable" data-content="cat2-btn">View All</a>
+                    <h3>PDF Tools</h3>
+                    <p>Merge, split, convert and edit PDF documents</p>
+                    <a href="pdf-tools.html" class="btn">View All</a>
                 </div>
                 
                 <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <h3 class="editable" data-content="cat3-title">Security Tools</h3>
-                    <p class="editable" data-content="cat3-desc">Protect your files with encryption and passwords</p>
-                    <a href="security-tools.html" class="btn editable" data-content="cat3-btn">View All</a>
+                    <h3>Security Tools</h3>
+                    <p>Protect your files with encryption and passwords</p>
+                    <a href="security-tools.html" class="btn">View All</a>
                 </div>
                 
                 <div class="category-card">
                     <div class="category-icon">
                         <i class="fas fa-exchange-alt"></i>
                     </div>
-                    <h3 class="editable" data-content="cat4-title">Conversion Tools</h3>
-                    <p class="editable" data-content="cat4-desc">Convert between different file formats easily</p>
-                    <a href="conversion-tools.html" class="btn editable" data-content="cat4-btn">View All</a>
+                    <h3>Conversion Tools</h3>
+                    <p>Convert between different file formats easily</p>
+                    <a href="conversion-tools.html" class="btn">View All</a>
                 </div>
             </div>
         </div>
@@ -787,8 +697,8 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="editable" data-content="features-title">Why Choose ToolKit Pro?</h2>
-                <p class="editable" data-content="features-subtitle">We provide the best tools with user experience in mind</p>
+                <h2>Why Choose ToolKit Pro?</h2>
+                <p>We provide the best tools with user experience in mind</p>
             </div>
             
             <div class="features-grid">
@@ -797,8 +707,8 @@
                         <i class="fas fa-bolt"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="editable" data-content="feature1-title">Lightning Fast</h3>
-                        <p class="editable" data-content="feature1-desc">Process your files in seconds with our optimized algorithms</p>
+                        <h3>Lightning Fast</h3>
+                        <p>Process your files in seconds with our optimized algorithms</p>
                     </div>
                 </div>
                 
@@ -807,8 +717,8 @@
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="editable" data-content="feature2-title">Secure & Private</h3>
-                        <p class="editable" data-content="feature2-desc">Your files are processed securely and never stored on our servers</p>
+                        <h3>Secure & Private</h3>
+                        <p>Your files are processed securely and never stored on our servers</p>
                     </div>
                 </div>
                 
@@ -817,8 +727,8 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="editable" data-content="feature3-title">Fully Responsive</h3>
-                        <p class="editable" data-content="feature3-desc">Use our tools on any device - desktop, tablet, or mobile</p>
+                        <h3>Fully Responsive</h3>
+                        <p>Use our tools on any device - desktop, tablet, or mobile</p>
                     </div>
                 </div>
                 
@@ -827,8 +737,8 @@
                         <i class="fas fa-cloud"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="editable" data-content="feature4-title">No Installation</h3>
-                        <p class="editable" data-content="feature4-desc">All tools work directly in your browser - no downloads required</p>
+                        <h3>No Installation</h3>
+                        <p>All tools work directly in your browser - no downloads required</p>
                     </div>
                 </div>
                 
@@ -837,8 +747,8 @@
                         <i class="fas fa-infinity"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="editable" data-content="feature5-title">Unlimited Use</h3>
-                        <p class="editable" data-content="feature5-desc">Process as many files as you need with no restrictions</p>
+                        <h3>Unlimited Use</h3>
+                        <p>Process as many files as you need with no restrictions</p>
                     </div>
                 </div>
                 
@@ -847,8 +757,8 @@
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="editable" data-content="feature6-title">Free to Use</h3>
-                        <p class="editable" data-content="feature6-desc">Access all our basic tools completely free of charge</p>
+                        <h3>Free to Use</h3>
+                        <p>Access all our basic tools completely free of charge</p>
                     </div>
                 </div>
             </div>
@@ -858,9 +768,9 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2 class="editable" data-content="cta-title">Ready to Transform Your Files?</h2>
-            <p class="editable" data-content="cta-subtitle">Join thousands of users who trust ToolKit Pro for their image and PDF processing needs</p>
-            <a href="signup.html" class="btn editable" data-content="cta-btn">Get Started Now</a>
+            <h2>Ready to Transform Your Files?</h2>
+            <p>Join thousands of users who trust ToolKit Pro for their image and PDF processing needs</p>
+            <a href="signup.html" class="btn">Get Started Now</a>
         </div>
     </section>
 
@@ -869,8 +779,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3 class="editable" data-content="footer-title">ToolKit Pro</h3>
-                    <p class="editable" data-content="footer-desc">Your all-in-one solution for image and PDF tools. Fast, secure, and easy to use.</p>
+                    <h3>ToolKit Pro</h3>
+                    <p>Your all-in-one solution for image and PDF tools. Fast, secure, and easy to use.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -880,168 +790,46 @@
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="editable" data-content="footer-image-title">Image Tools</h3>
+                    <h3>Image Tools</h3>
                     <ul>
-                        <li><a href="image-compressor.html" class="editable" data-content="footer-image1">Image Compressor</a></li>
-                        <li><a href="image-converter.html" class="editable" data-content="footer-image2">Image Converter</a></li>
-                        <li><a href="image-cropper.html" class="editable" data-content="footer-image3">Image Resizer</a></li>
-                        <li><a href="background-remover.html" class="editable" data-content="footer-image4">Background Remover</a></li>
-                        <li><a href="watermark-tool.html" class="editable" data-content="footer-image5">Watermark Tool</a></li>
+                        <li><a href="image-compressor.html">Image Compressor</a></li>
+                        <li><a href="image-converter.html">Image Converter</a></li>
+                        <li><a href="image-cropper.html">Image Resizer</a></li>
+                        <li><a href="background-remover.html">Background Remover</a></li>
+                        <li><a href="watermark-tool.html">Watermark Tool</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="editable" data-content="footer-pdf-title">PDF Tools</h3>
+                    <h3>PDF Tools</h3>
                     <ul>
-                        <li><a href="pdf-to-word.html" class="editable" data-content="footer-pdf1">PDF to Word</a></li>
-                        <li><a href="pdf-merger.html" class="editable" data-content="footer-pdf2">PDF Merger</a></li>
-                        <li><a href="pdf-splitter.html" class="editable" data-content="footer-pdf3">PDF Splitter</a></li>
-                        <li><a href="pdf-compressor.html" class="editable" data-content="footer-pdf4">PDF Compressor</a></li>
-                        <li><a href="pdf-editor.html" class="editable" data-content="footer-pdf5">PDF Editor</a></li>
+                        <li><a href="pdf-to-word.html">PDF to Word</a></li>
+                        <li><a href="pdf-merger.html">PDF Merger</a></li>
+                        <li><a href="pdf-splitter.html">PDF Splitter</a></li>
+                        <li><a href="pdf-compressor.html">PDF Compressor</a></li>
+                        <li><a href="pdf-editor.html">PDF Editor</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
-                    <h3 class="editable" data-content="footer-company-title">Company</h3>
+                    <h3>Company</h3>
                     <ul>
-                        <li><a href="about.html" class="editable" data-content="footer-company1">About Us</a></li>
-                        <li><a href="contact.html" class="editable" data-content="footer-company2">Contact</a></li>
-                        <li><a href="privacy.html" class="editable" data-content="footer-company3">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="editable" data-content="footer-company4">Terms of Service</a></li>
-                        <li><a href="blog.html" class="editable" data-content="footer-company5">Blog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p class="editable" data-content="copyright">&copy; 2023 ToolKit Pro. All rights reserved.</p>
+                <p>&copy; 2023 ToolKit Pro. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Edit Modal -->
-    <div id="edit-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;">
-        <div style="background: white; padding: 30px; border-radius: var(--border-radius); max-width: 500px; width: 90%;">
-            <h3 style="margin-bottom: 20px;">Edit Content</h3>
-            <div id="edit-form">
-                <!-- Form will be generated here -->
-            </div>
-            <div style="display: flex; gap: 10px; margin-top: 20px;">
-                <button id="save-edit" class="btn" style="flex: 1;">Save</button>
-                <button id="cancel-edit" class="btn btn-secondary" style="flex: 1;">Cancel</button>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Edit Mode Functionality
-        const editModeToggle = document.getElementById('edit-mode-toggle');
-        const editModal = document.getElementById('edit-modal');
-        const editForm = document.getElementById('edit-form');
-        const saveEditBtn = document.getElementById('save-edit');
-        const cancelEditBtn = document.getElementById('cancel-edit');
-        
-        let currentEditElement = null;
-        let editMode = false;
-        
-        // Toggle edit mode
-        editModeToggle.addEventListener('click', function() {
-            editMode = !editMode;
-            document.body.classList.toggle('edit-mode', editMode);
-            editModeToggle.innerHTML = editMode ? 
-                '<i class="fas fa-times"></i> Exit Edit Mode' : 
-                '<i class="fas fa-edit"></i> Edit Mode';
-        });
-        
-        // Make elements editable
-        document.querySelectorAll('.editable').forEach(element => {
-            element.addEventListener('click', function(e) {
-                if (!editMode) return;
-                
-                e.preventDefault();
-                e.stopPropagation();
-                
-                currentEditElement = this;
-                showEditModal(this);
-            });
-        });
-        
-        // Show edit modal
-        function showEditModal(element) {
-            const content = element.textContent;
-            const isLink = element.tagName === 'A';
-            const dataContent = element.getAttribute('data-content');
-            
-            editForm.innerHTML = `
-                <label class="edit-label">Content</label>
-                <input type="text" class="edit-input" id="edit-content" value="${content}">
-                ${isLink ? `
-                    <label class="edit-label">Link URL</label>
-                    <input type="text" class="edit-input" id="edit-href" value="${element.getAttribute('href') || ''}">
-                ` : ''}
-                <input type="hidden" id="edit-data-content" value="${dataContent}">
-            `;
-            
-            editModal.style.display = 'flex';
-        }
-        
-        // Save edit
-        saveEditBtn.addEventListener('click', function() {
-            if (!currentEditElement) return;
-            
-            const newContent = document.getElementById('edit-content').value;
-            const newHref = document.getElementById('edit-href') ? document.getElementById('edit-href').value : null;
-            const dataContent = document.getElementById('edit-data-content').value;
-            
-            // Update element content
-            currentEditElement.textContent = newContent;
-            
-            // Update href if it's a link
-            if (newHref !== null && currentEditElement.tagName === 'A') {
-                currentEditElement.setAttribute('href', newHref);
-            }
-            
-            // Save to localStorage
-            saveToLocalStorage(dataContent, {
-                content: newContent,
-                href: newHref
-            });
-            
-            // Close modal
-            editModal.style.display = 'none';
-            currentEditElement = null;
-        });
-        
-        // Cancel edit
-        cancelEditBtn.addEventListener('click', function() {
-            editModal.style.display = 'none';
-            currentEditElement = null;
-        });
-        
-        // Save to localStorage
-        function saveToLocalStorage(key, data) {
-            const savedData = JSON.parse(localStorage.getItem('toolkit-content') || '{}');
-            savedData[key] = data;
-            localStorage.setItem('toolkit-content', JSON.stringify(savedData));
-        }
-        
-        // Load from localStorage
-        function loadFromLocalStorage() {
-            const savedData = JSON.parse(localStorage.getItem('toolkit-content') || '{}');
-            
-            document.querySelectorAll('.editable').forEach(element => {
-                const dataContent = element.getAttribute('data-content');
-                if (savedData[dataContent]) {
-                    const data = savedData[dataContent];
-                    element.textContent = data.content;
-                    
-                    if (data.href && element.tagName === 'A') {
-                        element.setAttribute('href', data.href);
-                    }
-                }
-            });
-        }
-        
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             const nav = document.querySelector('nav ul');
@@ -1056,9 +844,6 @@
                 document.querySelector('nav ul').style.display = 'none';
             }
         });
-        
-        // Load saved content on page load
-        window.addEventListener('DOMContentLoaded', loadFromLocalStorage);
     </script>
 </body>
 </html>
